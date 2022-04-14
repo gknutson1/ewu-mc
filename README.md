@@ -1,2 +1,2 @@
-# ewu-mc
-Repository containing the server, client, and site code for the EWU Minecraft server.
+# ewu-mc/client
+Branch containing the code for the client.
