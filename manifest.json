@@ -12,7 +12,7 @@
   "manifestVersion": 1,
   "name": "EWU MC",
   "author": "ewu_minecraft",
-  "projectID": 563950,
+  "projectID": 610625,
   "files": [
         {
       "projectID": 225127,
@@ -791,5 +791,5 @@
     }
   ],
   "overrides": "overrides",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
