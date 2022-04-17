@@ -14,25 +14,13 @@ JAVA_PARAMETERS=''
 
 # these you can edit
 MIN_RAM='2048M'
-MAX_RAM='2048M'
+MAX_RAM='8192M'
 
 # DO NOT EDIT ANYTHING PAST THIS LINE
 LAUNCHPARAMS="-server -Xms$MIN_RAM -Xmx$MAX_RAM $JAVA_PARAMETERS -Dlog4j.configurationFile=log4j2_112-116.xml -jar $FORGEJAR nogui"
-
-echo "Checking java version..."
-echo
-java -version
-echo
-echo "The expected java version is 1.8. Not higher, not lower."
-echo
 
 echo "Launching the server..."
 echo
 echo "> java $LAUNCHPARAMS"
 
-java $LAUNCHPARAMS
-
-echo
-echo "- The server has stopped. If it's a crash, please read the output above."
-echo
-read -p "- Press Return to exit..." _
+tmux new-session -s mc_session "java $LAUNCHPARAMS; read -p 'Server has stopped, press Return to continue...'"
