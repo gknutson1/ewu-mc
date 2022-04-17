@@ -1,52 +1,109 @@
 ﻿<!doctype html>
-<html>
+<html lang="en-US">
+
 <head>
-<meta charset="utf-8">
-<title>index</title>
-<style>
+    <meta charset="utf-8">
+    <title>index</title>
+    <style>
     body {
         padding: 50px;
         background-color: #202020;
         color: #d2d4d4;
         font-family: sans-serif;
     }
+
     a:link {
         color: #87cefa;
     }
+
     a:visited {
-        color: #3cb371
+        color: #3cb371;
     }
-    
-</style>
+    </style>
 </head>
 
 <body>
-<p>This page is here to instruct you on how to install the EWU Minecraft CS Modpack. This site is still very much a work in progress, so please be paitent. If you wish to contribute, you can find the source code at the 'site' branch at <a href="https://github.com/gknutson1/ewu-mc/">github.com/gknutson1/ewu-minecraft-server</a>!</p>
-<p>The server has a Discord! Join at <a href="https://discord.gg/TE2bvDM5/">discord.gg/TE2bvDM5</a>. If you have any problems or questions with the site or the server, contact me on Discord at ParadoxImmobilizer#4482, either through dms or by pinging me in the #server-help channel on the Discord.</p>
-
-<h1>Table Of Contents</h1>
+    <p>
+        This page is here to instruct you on how to install the EWU Minecraft CS Modpack. This site is still very much a work in progress, so please be paitent. If you wish to contribute, you can find the source code at the 'site' branch at <a href="https://github.com/gknutson1/ewu-mc/">github.com/gknutson1/ewu-mc</a>. You can also find the source code for the modpack there if you want to roll your own version of the pack or contribute to improving the pack.
+    </p>
+    <p>
+        The server has a Discord! The discord is where we announce updates, coordinate events, and talk with other players. Join at <a href="https://discord.gg/TE2bvDM5/">discord.gg/TE2bvDM5</a>. If you have any problems or questions about the site, the modpack or the server, contact me on Discord by pinging me (@Gunnar Knutson) in the #server-help channel on the Discord.
+    </p>
+    <p>
+        This modpack is formatted as a CurseForge pack. This guide shows how to use MultiMC to install and manage the modpack, but any Minecraft launcher that supports CurseForge modpacks should work. You can download the latest version of the pack from the <a href="https://github.com/gknutson1/ewu-minecraft-server/releases/latest">GitHub repo</a>.
+    </p>
+    <p>
+        This guide assumes you have zero experience with modded Minecraft and tries to be as detailed as possible. If you have some experience with modded Minecraft or have used MultiMC before, you may only neeed to skim this guide or not need to use it at all.
+    </p>
+    <h1>Table Of Contents</h1>
     <p><a href="#requirements">System Requirements</a></p>
     <p><a href="#java">Installing Java</a></p>
     <p><a href="#multimc">Installing MultiMC</a></p>
     <p><a href="#account">Signing In</a></p>
     <p>&emsp;<a href="#mojang">Mojang Account</a></p>
     <p>&emsp;<a href="#microsoft">Microsoft Account</a></p>
-    <p>&emsp;<a href="#modpack">Installing the Modpack</a></p>
-
-<h2 id="requirements">System Requirements</h2>
-    <p>To join the Server, you must have a computer capable of running Minecraft Java Edition 1.12.2. In general, you will need a computer with an x86-64 processor, running either Windows, Linux, or MacOS, although other OSes may work. It is reccommended to have at least 8 gigs of RAM. This tutorial is primarily for Windows users, so users of other OSes may need to modify these instructions as they see fit.</p>
-<h2 id="java">Installing Java</h2>
-    <p>The server requires Java 8, preferrably the most recent version (8u311 at the time of writing). To install Java, go to <a href="https://java.com/en/download/">java.com/en/download</a> and select &quot;Agree and Start Free Download&quot;. Once the download has completed, Run the installer and follow all of it's prompts.</p>
-<h2 id="multimc">Installing MultiMC</h2>
-    <p>Go to <a href="https://multimc.org">multimc.org</a> and scroll down until you find the "downloads" section. Select the button marked &quot;Download (32/64-bit)&quot; under the Windows logo. This will download a file labled &quot;mmc-stable-win32.zip&quot;. Extract the files in this folder to wherever you wish to install minecraft to. Then start MultiMC by opening the folder you just extracted, and starting the program &quot;MultiMC.exe&quot;.</p>
-    <p>When you first open MultiMC, you may get a warning from Windows SmartScreen saying that the program is not signed. Simply click &quot;more info&quot; and then &quot;Run Anyway&quot;. MultiMC will then ask you to select your language. Do so. Next, you need to select your Java version and memory allocation settings. For java, select a version of java that has an architecture of 64 and a version number of 1.8.0_xxx, where the x's are any number. For memory allocation, if you have 10 GB of RAM or more, allocate 8 GB in the box marked &quot;Maximum memory allocation&quot;. If you have less than 10 GB of ram, subtract 2 GB from the ammount of RAM you have, and allocate that much. If you have less than 6 GB of RAM, you may run into issues running the modpack. Once you have set the memory allocation, select &quot;Next&quot;. MultiMC will ask you if you wish to Enable Analytics. You can chose to enable or disable Analytics, and thenclick &quot;Finish&quot;.</p>
-<h2 id="account">Signing In</h2>
-    <p>Now that you are in MultiMC, select the button marked &quot;Settings&quot; at the top of the MultiMC UI, and then select &quot;Accounts&quot; in the window that pops up.</p>
+    <p><a href="#modpack">Installing the Modpack</a></p>
+    <p><a href="#update">Updating the Modpack</a></p>
+    <h2 id="requirements">System Requirements</h2>
+    <p>
+        To join the Server, you must have a computer capable of running Minecraft Java Edition 1.12.2. In general, you will need a computer with an x86-64 processor, running either Windows, Linux, or MacOS, although other OSes may work. It is reccommended to give the modpack at least 4 GB of RAM, so ideally you should have 8 GB of RAM. However, the modpack can run on computers with as little as 4 GB of RAM. This tutorial is primarily for Windows users, so users of other OSes may need to modify these instructions as they see fit.
+    </p>
+    <h2 id="java">Installing Java</h2>
+    <p>
+        The server requires Java 8, preferrably the most recent version (8u311 at the time of writing). To install Java, go to <a href="https://java.com/en/download/">java.com/en/download</a> and select &quot;Agree and Start Free Download&quot;. Once the download has completed, Run the installer and follow all of it's prompts.
+    </p>
+    <h2 id="multimc">Installing MultiMC</h2>
+    <p>
+        Go to <a href="https://multimc.org">multimc.org</a> and scroll down until you find the "downloads" section. Select the button marked &quot;Download (32/64-bit)&quot; under the Windows logo. This will download a file labled &quot;mmc-stable-win32.zip&quot;. Extract the files in this folder to wherever you wish to install minecraft to. Then start MultiMC by opening the folder you just extracted, and starting the program &quot;MultiMC.exe&quot;.
+    </p>
+    <p>
+        When you first open MultiMC, you may get a warning from Windows SmartScreen saying that the program is not signed. Simply click &quot;more info&quot; and then &quot;Run Anyway&quot;. MultiMC will then ask you to select your language. Do so. Next, you need to select your Java version and memory allocation settings. For java, select a version of java that has an architecture of 64 and a version number of 1.8.0_xxx, where the x's are any number. For memory allocation, insert the ammount of ram you wish to assign to the modpack in the &quot;Maximum memory allocation&quot; field, in MB. See the table below for the reccommendations, based on how much RAM is in your computer. You can see how much RAM you have in your computer by going to settings -> system -> about and looking for the 'Installed RAM' field.
+    </p>
+    <table>
+        <tr>
+            <th>System RAM</th>
+            <th>&nbsp;&nbsp;&nbsp;Memory Allocation</th>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;More than 8 GB</td>
+            <td>&nbsp;&nbsp;&nbsp;6 GB (6144 MB)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;6 to 8 GB</td>
+            <td>&nbsp;&nbsp;&nbsp;4 GB (4096 MB)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;4 to 5 GB</td>
+            <td>&nbsp;&nbsp;&nbsp;3 GB (3072 MB)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Less than 4 GB</td>
+            <td>&nbsp;&nbsp;&nbsp;Not reccommended</td>
+        </tr>
+    </table>
+    <p>
+        Once you have set the memory allocation, select &quot;Next&quot;. MultiMC will ask you if you wish to Enable Analytics. You can chose to enable or disable Analytics, and then click &quot;Finish&quot;.
+    </p>
+    <h2 id="account">Signing In</h2>
+    <p>
+        Now that you are in MultiMC, select the button marked &quot;Settings&quot; at the top of the MultiMC UI, and then select &quot;Accounts&quot; in the window that pops up.
+    </p>
     <h3 id="mojang">&emsp;Mojang Account</h3>
-        <p>&emsp;If you have a Mojang account (you bought Minecraft through mojang.com and have NOT yet migrated your account), select &quot;Add Mojang&quot;, and input your username and password, and hit OK.</p>
+    <p style="margin-left: 1em;">
+        If you have a Mojang account (you bought Minecraft through mojang.com and have NOT yet migrated your account), select &quot;Add Mojang&quot;, input your username and password, and hit OK.
+    </p>
     <h3 id="microsoft">&emsp;Microsoft Account</h3>
-        <p>&emsp;If you have a Microsoft account (you bought Minecraft through Minecraft.net, or migrated your Mojang account), Select &quot;Add Microsoft&quot;. A window will appear with a URL and a 8 digit code. Open the URL and input the 8 digit code into the website you just opened. In the website, click next, and then follow the prompts to sign in to your Microsoft account. A message will appear in the site asking you to grant MultiMC access to your Microsoft account. Select yes to finish signing in.</p>
-<h2 id="modpack">Installing the Modpack</h2>
-    <p>go to <a href="https://github.com/gknutson1/ewu-mc/releases/latest">github.com/gknutson1/ewu-minecraft-server/releases/latest</a> and download the file labled EWU.CS.Modpack.vXX.zip, where XX is some number. Go back to MultiMC and select &quot;Add Instance&quot; in the upper left corner of the window. In the window that pops up, select &quot;import from zip&quot;, and then &quot;browse&quot;. Slelect the zip file you just downloaded, and then select &quot;ok&quot;. MultiMC will take a minute to unpack the folder, and you will then see the modpack in the main multiMC screen. Now you can simply hit the &quot;launch&quot; button on the right side of the screen to start playing!</p>
+    <p style="margin-left: 1em;">
+        If you have a Microsoft account (you bought Minecraft through Minecraft.net, or migrated your Mojang account), Select &quot;Add Microsoft&quot;. A window will appear with a URL and a 8 digit code. Open the URL and input the 8 digit code into the website you just opened. In the website, click next, and then follow the prompts to sign in to your Microsoft account. A message will appear in the site asking you to grant MultiMC access to your Microsoft account. Select yes to finish signing in.
+    </p>
+    <h2 id="modpack">Installing the Modpack</h2>
+    <p>
+        Go to <a href="https://github.com/gknutson1/ewu-mc/releases/latest">github.com/gknutson1/ewu-mc/releases/latest</a> and download the file labled ewu_mc_client_X.X.X.X_RX.zip, where X is some number. Go back to MultiMC and select &quot;Add Instance&quot; in the upper left corner of the window. In the window that pops up, select &quot;import from zip&quot;, and then &quot;browse&quot;. Slelect the zip file you just downloaded, and then select &quot;ok&quot;. MultiMC will take a minute to unpack the folder, and you will then see the modpack in the main multiMC screen. Now you can simply hit the &quot;launch&quot; button on the right side of the screen to start playing!
+    </p>
+    <h2 id="update">Updating the Modpack</h2>
+    <p>
+        Delete the current install of the modpack by right-clicking on it and selecting &quot;delete&quot;, then &quot;yes&quot;. Then proceed to <a href="#modpack">Installing the Modpack</a>.
+    </p>
 </body>
+
 </html>
