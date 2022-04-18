@@ -78,7 +78,7 @@
       "alignment": "left_center",
       "action": {
         "type": "openLink",
-        "link": "https://github.com/gknutson1/ewu-mc/releases/tag/v1.0.0"
+        "link": "https://github.com/gknutson1/ewu-mc/releases/tag/v1.1.0"
       }
     },
     "discord": {
@@ -108,7 +108,7 @@
   },
   "labels": {
     "ewumc": {
-      "text": "EWU modpack v1.0.0 / Minecraft 1.12",
+      "text": "EWU modpack v1.1.0 / Minecraft 1.12",
       "posX": -197,
       "posY": -30,
       "color": -1,
