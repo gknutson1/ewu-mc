@@ -78,7 +78,7 @@
       "alignment": "left_center",
       "action": {
         "type": "openLink",
-        "link": "https://github.com/Nomifactory/Nomifactory/blob/v1.2.2-redux/UPDATENOTES.md"
+        "link": "https://github.com/gknutson1/ewu-mc/releases/tag/v1.0.0"
       }
     },
     "discord": {
@@ -90,11 +90,11 @@
       "alignment": "left_center",
       "action": {
         "type": "openLink",
-        "link": "https://discord.gg/zwQzqP8b6q"
+        "link": "https://discord.gg/JgwU2DVE"
       }
     },
-    "akliz": {
-      "text": "Rent Your Own Nomifactory Server!",
+    "github": {
+      "text": "Ceck out the GitHub repo!",
       "posX": 4,
       "posY": 50,
       "width": 240,
@@ -102,11 +102,25 @@
       "alignment": "left_center",
       "action": {
         "type": "openLink",
-        "link": "https://www.akliz.net/nomifactory"
+        "link": "https://github.com/gknutson1/ewu-mc"
       }
     }
   },
   "labels": {
+    "ewumc": {
+      "text": "EWU modpack v1.0.0 / Minecraft 1.12",
+      "posX": -197,
+      "posY": -30,
+      "color": -1,
+      "alignment": "bottom_right"
+    },
+    "nomifactory": {
+      "text": "Based on Nomifactory 1.2.2.1",
+      "posX": -197,
+      "posY": -20,
+      "color": -1,
+      "alignment": "bottom_right"
+    },
     "mojang": {
       "text": "Copyright Mojang AB. Do not distribute!",
       "posX": -197,
