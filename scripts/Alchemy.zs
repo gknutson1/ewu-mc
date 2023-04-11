@@ -21,14 +21,13 @@ recipes.addShaped(<thermalfoundation:tool.shears_wood>, [[null,<minecraft:stick>
 //Rubber Tree
 recipes.addShapeless(<gregtech:sapling>, [<ore:treeSapling>,<gregtech:meta_item_1:32627>]);
 
-//Fertilizer
-recipes.remove(<forestry:fertilizer_compound>);
-recipes.addShaped(<forestry:fertilizer_compound> * 8, [[<minecraft:sand>,<gregtech:meta_item_1:8226>,<minecraft:sand>]]);
-
+//Fertilizer 
+recipes.addShaped("actuallyadditions_fertilizer", <actuallyadditions:item_fertilizer> * 8, [[<minecraft:sand>,<gregtech:meta_item_1:8226>,<minecraft:sand>]]);
 
 recipes.remove(<dimensionaledibles:overworld_cake>);
 recipes.remove(<dimensionaledibles:nether_cake>);
 recipes.remove(<dimensionaledibles:end_cake>);
+recipes.remove(<dimensionaledibles:island_cake>);
 recipes.remove(<dimensionaledibles:custom_cake>);
 recipes.remove(<minecraft:cake>);
 recipes.remove(<enderio:item_material:70>);
@@ -56,7 +55,7 @@ makeShaped("of_void_cake", <dimensionaledibles:custom_cake>.withTag({dimID: 119,
 	{ A : <actuallyadditions:item_crystal:0>,	// Restonia Crystal
 	  B : <actuallyadditions:item_crystal:1>,	// Palis Crystal
 	  C : <actuallyadditions:item_crystal:4>,	// Emeradic Crystal
-	  D : <forestry:crafting_material>,			// Pulsating Dust
+	  D : <ore:dustPulsating>,			// Pulsating Dust
 	  E : <enderio:item_material:70>,			// Cake Base
 	  F : <metaitem:plateAluminium>
 	}

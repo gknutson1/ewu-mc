@@ -423,7 +423,7 @@ makeShaped("ar_suit_workstation",
 		R: <metaitem:robot.arm.mv>, // MV Robot Arm
 		C: <ore:circuitGood>,       // T2 Circuit
 		X: <gregtech:machine:502>,  // MV Machine Hull
-		W: <forestry:worktable>,    // Worktable
+		W: <gregtech:machine:825>,  // GTCE Crafting Station
 	});
 
 // Gas Charger
@@ -884,9 +884,15 @@ recipes.addShapeless(<advancedrocketry:landingpad>, [
 
 // Station Light
 recipes.remove(<advancedrocketry:circlelight>);
-recipes.addShapeless(<advancedrocketry:circlelight>, [
-	<ore:plateIron>, <minecraft:glowstone>
-]);
+makeShaped("ar_circlelight",
+	<advancedrocketry:circlelight> * 4, [
+		" P ",
+		"PGP",
+		" P ",
+	], {
+		P: <ore:plateIron>,  // Iron Plate
+		G: <minecraft:glowstone>, // Glowstone
+	});
 
 // Atmosphere Detector
 recipes.remove(<advancedrocketry:oxygendetection>);

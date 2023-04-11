@@ -1,7 +1,7 @@
 :: Server Launch Script
 ::
 :: Thrown together by Neeve in under five minutes, Public Domain
-:: https://github.com/Neeve01 
+:: https://github.com/Neeve01
 ::
 :: Added java version check by t0suj4, Public Domain
 :: https://github.com/t0su4
