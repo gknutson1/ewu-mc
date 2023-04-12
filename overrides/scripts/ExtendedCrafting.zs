@@ -268,6 +268,12 @@ solidifier.recipeBuilder()
     .duration(500).EUt(16).buildAndRegister();
 
 solidifier.recipeBuilder()
+    .fluidInputs([<liquid:plutonium241> * 144])
+    .notConsumable(<gregtech:meta_item_1:32307>)
+    .outputs(<contenttweaker:stabilizedplutonium> * 2)
+    .duration(500).EUt(16).buildAndRegister();
+
+solidifier.recipeBuilder()
     .fluidInputs([<liquid:plutonium2> * 144])
     .notConsumable(<gregtech:meta_item_1:32307>)
     .outputs(<contenttweaker:stabilizedplutonium> * 2)
@@ -372,16 +378,6 @@ fluid_extractor.recipeBuilder()
     .duration(20).EUt(16).buildAndRegister();
 
 fluid_extractor.recipeBuilder()
-    .inputs([<nuclearcraft:uranium:4>])
-    .fluidOutputs([<liquid:uranium235> * 144])
-    .duration(180).EUt(16).buildAndRegister();
-
-fluid_extractor.recipeBuilder()
-    .inputs([<nuclearcraft:uranium:6>])
-    .fluidOutputs([<liquid:uranium235> * 16])
-    .duration(20).EUt(16).buildAndRegister();
-
-fluid_extractor.recipeBuilder()
     .inputs([<nuclearcraft:uranium:8>])
     .fluidOutputs([<liquid:uranium> * 144])
     .duration(180).EUt(16).buildAndRegister();
@@ -411,11 +407,6 @@ fluid_extractor.recipeBuilder()
     .fluidOutputs([<liquid:neptunium> * 16])
     .duration(20).EUt(16).buildAndRegister();
 
-fluid_extractor.findRecipe(32, [<gregtech:meta_item_1:10052>], []).remove();
-fluid_extractor.findRecipe(32, [<gregtech:meta_item_1:10053>], []).remove();
-fluid_extractor.findRecipe(32, [<gregtech:meta_item_1:9052>], []).remove();
-fluid_extractor.findRecipe(32, [<gregtech:meta_item_1:9053>], []).remove();
-
 fluid_extractor.recipeBuilder()
     .inputs([<nuclearcraft:plutonium>])
     .fluidOutputs([<liquid:plutonium2> * 144])
@@ -437,16 +428,6 @@ fluid_extractor.recipeBuilder()
     .duration(20).EUt(16).buildAndRegister();
 
 fluid_extractor.recipeBuilder()
-    .inputs([<nuclearcraft:plutonium:8>])
-    .fluidOutputs([<liquid:plutonium2> * 144])
-    .duration(180).EUt(16).buildAndRegister();
-
-fluid_extractor.recipeBuilder()
-    .inputs([<nuclearcraft:plutonium:10>])
-    .fluidOutputs([<liquid:plutonium2> * 16])
-    .duration(20).EUt(16).buildAndRegister();
-
-fluid_extractor.recipeBuilder()
     .inputs([<nuclearcraft:plutonium:12>])
     .fluidOutputs([<liquid:plutonium2> * 144])
     .duration(180).EUt(16).buildAndRegister();
@@ -458,22 +439,12 @@ fluid_extractor.recipeBuilder()
 
 fluid_extractor.recipeBuilder()
     .inputs([<gregtech:meta_item_1:10052>])
-    .fluidOutputs([<liquid:plutonium2> * 144])
-    .duration(180).EUt(16).buildAndRegister();
-
-fluid_extractor.recipeBuilder()
-    .inputs([<gregtech:meta_item_1:10053>])
-    .fluidOutputs([<liquid:plutonium2> * 144])
+    .fluidOutputs([<liquid:plutonium> * 144])
     .duration(180).EUt(16).buildAndRegister();
 
 fluid_extractor.recipeBuilder()
     .inputs([<gregtech:meta_item_1:9052>])
-    .fluidOutputs([<liquid:plutonium2> * 16])
-    .duration(20).EUt(16).buildAndRegister();
-
-fluid_extractor.recipeBuilder()
-    .inputs([<gregtech:meta_item_1:9053>])
-    .fluidOutputs([<liquid:plutonium2> * 16])
+    .fluidOutputs([<liquid:plutonium> * 16])
     .duration(20).EUt(16).buildAndRegister();
 
 fluid_extractor.recipeBuilder()
@@ -659,7 +630,7 @@ makeShaped("of_extendedcrafting_pedestal", <extendedcrafting:pedestal>,
      "BCB"],
     { A : <gregtech:meta_item_1:10231>,
       B : <gregtech:meta_item_1:12231>,
-      C : <gregtech:compressed_10:11> });
+      C : <gregtech:meta_block_compressed_14:8> }); //Red Steel Block
 
 <extendedcrafting:material:19>.displayName = "Conflux Component";
 recipes.remove(<extendedcrafting:material:19>);
@@ -816,7 +787,7 @@ makeExtremeRecipe5(<extendedcrafting:table_elite>,
      "CBABC"],
     { A : <extendedcrafting:material:10>,
       B : <gregtech:meta_item_1:12231>,
-      C : <gregtech:compressed_0>,
+      C : <gregtech:meta_block_compressed_0:1>,
       D : <extendedcrafting:material:16>,
       T : <extendedcrafting:table_advanced> });
 <extendedcrafting:table_elite>.displayName = "Elite Extended Crafting Table";
@@ -953,7 +924,7 @@ reactor.recipeBuilder()
 
 //Elemental Reduction
 reactor.recipeBuilder()
-    .inputs(<forestry:crafting_material>)
+    .inputs(<ore:dustPulsating>)
     .fluidInputs([<liquid:hydrofluoric_acid> * 1000])
     .fluidOutputs(<liquid:elementalreduction> * 1000)
     .duration(80).EUt(90).buildAndRegister();
@@ -1012,7 +983,7 @@ makeExtremeRecipe7(<contenttweaker:exoticmaterialscatalyst>,
       Q : <gregtech:meta_item_1:10303>,
       R : <gregtech:meta_item_1:10304>,
       S : <gregtech:meta_item_1:10714>,
-      T : <modularmachinery:itemmodularium>,
+      T : <ore:ingotMicroversium>,
       U : <redstonearsenal:material:32>,
       V : <simplyjetpacks:metaitemmods:3>,
       W : <thermalfoundation:material:136>,
@@ -1082,9 +1053,6 @@ makeExtremeRecipe9(<contenttweaker:eternalcatalyst>,
       K : <moreplates:empowered_restonia_gear>,
       L : <moreplates:empowered_void_gear> });
 <contenttweaker:eternalcatalyst>.addTooltip(format.darkGray(format.italic("Gaze into the Abyss...")));
-<gregtech:meta_item_1:32725>.clearTooltip();
-<gregtech:meta_item_1:32725>.addTooltip(format.darkPurple("Quantum Star"));
-<gregtech:meta_item_1:32725>.displayName = "Quantum Star";
 
 
 ////////////////////////// Infinity Ingot ///////////////////////
@@ -1188,7 +1156,8 @@ makeExtremeRecipe9(<storagedrawers:upgrade_creative:1> * 2,
       T : creativetank.only(isCreative),
       U : <appliedenergistics2:creative_energy_cell>,
       W : <thermalcultivation:watering_can:32000>.withTag({Water: 0, Mode: 4}, false),
-      X : <thermalexpansion:capacitor:32000> });
+      X : <thermalexpansion:capacitor:32000>.withTag({Energy: 250000000}, false)
+    });
 
 solidifier.recipeBuilder()
     .fluidInputs([<liquid:moltencreativeportabletank> * 144])
@@ -1463,7 +1432,7 @@ makeExtremeRecipe9(creativejetpack,
      K: darksoulariumjetplate });
 
 // Creative Flux Capacitor
-makeExtremeRecipe9(<thermalexpansion:capacitor:32000>,
+makeExtremeRecipe9(<thermalexpansion:capacitor:32000>.withTag({Energy: 250000000}),
     ["ABCDEDCBA",
      "BCDEFEDCB",
      "CDEFGFEDC",
@@ -1573,3 +1542,12 @@ makeExtremeRecipe9(<contenttweaker:ultimate_power_storage>,
 
 <gregtech:turbine_casing:3>.displayName = "Magnalium Turbine Casing";
 
+//Luminessence de-blockifying recipe
+recipes.addShapeless(<extendedcrafting:material:7>*9,[<extendedcrafting:storage:1>]);
+
+//Nether Star Nugget Recombination
+makeShaped("of_star_from_nuggets", <minecraft:nether_star>,
+    ["NNN",
+     "NNN",
+     "NNN"],
+    { N : <extendedcrafting:material:140> });

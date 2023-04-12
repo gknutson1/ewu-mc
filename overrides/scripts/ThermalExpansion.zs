@@ -7,34 +7,11 @@ import crafttweaker.recipes.IRecipeFunction;
 
 import mods.gregtech.recipe.RecipeMap;
 
-/*
-[[<>, <>, <>, <>, <>, <>],
-[<>, <>, <>, <>, <>, <>],
-[<>, <>, <>, <>, <>, <>],
-[<>, <>, <>, <>, <>, <>],
-[<>, <>, <>, <>, <>, <>]]); */
+import scripts.CommonVars.makeShapedF as makeShapedF;
 
 //////////////////////////////////////////////////////////////
 /////////////       Thermal Expansion       //////////////////
 //////////////////////////////////////////////////////////////
-
-//mods.jei.JEI.removeAndHide(<thermalfoundation:storage_resource:1>);
-//mods.jei.JEI.removeAndHide(<thermalfoundation:material:802>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:288>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:256>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:257>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:258>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:273>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:303>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:304>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:336>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:369>);
-//mods.jei.JEI.removeAndHide(<thermalexpansion:augment:324>);
-//mods.jei.JEI.removeAndHide(<extendedcrafting:material:128>);
-recipes.removeByRecipeName("extendedcrafting:diamond_nugget_to");
-mods.jei.JEI.removeAndHide(<extendedcrafting:material:129>);
-recipes.removeByRecipeName("extendedcrafting:emerald_nugget_to");
-recipes.removeByRecipeName("actuallyadditions:recipes146");
 
 //Redstone Servo
 recipes.addShaped(<thermalfoundation:material:512>, [
@@ -58,32 +35,44 @@ function updateTank(level as byte) as IRecipeFunction {
     };
 }
 
-recipes.addShaped(hardenedtank,
-    [[<actuallyadditions:item_crystal:1>, <gregtech:meta_item_1:12126>, <actuallyadditions:item_crystal:1>],
-     [<gregtech:meta_item_1:12126>,        basictankIng.marked("tank"),       <gregtech:meta_item_1:12126>],
-     [<actuallyadditions:item_crystal:1>, <gregtech:meta_item_1:12126>, <actuallyadditions:item_crystal:1>]],
-	updateTank(1)
+var tankShape as string[] = ["ABA",
+                             "BCB",
+                             "ABA"];
+
+makeShapedF("of_hardenedtank",
+    hardenedtank,
+    tankShape,
+    { A : <actuallyadditions:item_crystal:1>,
+      B : <gregtech:meta_item_1:12126>,
+      C : basictankIng.marked("tank")},
+    updateTank(1)
 );
 
-recipes.addShaped(reinforcedtank,
-    [[<thermalfoundation:material:1026>, <gregtech:meta_item_1:12112>, <thermalfoundation:material:1026>],
-	 [<gregtech:meta_item_1:12112>,      hardenedtankIng.marked("tank"),     <gregtech:meta_item_1:12112>],
-	 [<thermalfoundation:material:1026>, <gregtech:meta_item_1:12112>, <thermalfoundation:material:1026>]],
-	updateTank(2)
+makeShapedF("of_reinforcedtank",
+    reinforcedtank,
+    tankShape,
+    { A : <thermalfoundation:material:1026>,
+      B : <gregtech:meta_item_1:12112>,
+      C : hardenedtankIng.marked("tank")},
+    updateTank(2)
 );
 
-recipes.addShaped(signalumtank,
-    [[<thermalfoundation:material:1027>, <thermalfoundation:material:357>, <thermalfoundation:material:1027>],
-	 [<thermalfoundation:material:357>,  reinforcedtankIng.marked("tank"),  <thermalfoundation:material:357>],
-	 [<thermalfoundation:material:1027>, <thermalfoundation:material:357>, <thermalfoundation:material:1027>]],
-	updateTank(3)
+makeShapedF("of_signalumtank",
+    signalumtank,
+    tankShape,
+    { A : <thermalfoundation:material:1027>,
+      B : <thermalfoundation:material:357>,
+      C : reinforcedtankIng.marked("tank")},
+    updateTank(3)
 );
 
-recipes.addShaped(resonanttank,
-    [[<thermalfoundation:material:1024>, <thermalfoundation:material:359>, <thermalfoundation:material:1024>],
-	 [<thermalfoundation:material:359>,   signalumtankIng.marked("tank"),   <thermalfoundation:material:359>],
-	 [<thermalfoundation:material:1024>, <thermalfoundation:material:359>, <thermalfoundation:material:1024>]],
-	updateTank(4)
+makeShapedF("of_resonanttank",
+    resonanttank,
+    tankShape,
+    { A : <thermalfoundation:material:1024>,
+      B : <thermalfoundation:material:359>,
+      C : signalumtankIng.marked("tank")},
+    updateTank(4)
 );
 
 
@@ -123,28 +112,28 @@ recipes.addShaped(<thermalexpansion:dynamo:5>, [
 	[<gregtech:meta_item_1:12702>, <morefurnaces:furnaceblock:2>, <gregtech:meta_item_1:12702>],
 	[<enderio:item_material:13>, <thermalfoundation:material:514>, <enderio:item_material:13>]]);
 
-//hardened upgrade
+//Hardened Upgrade Kit
 recipes.remove(<thermalfoundation:upgrade>);
 recipes.addShaped(<thermalfoundation:upgrade>, [
 	[<gregtech:meta_item_2:26126>, <gregtech:meta_item_1:12126>, <gregtech:meta_item_2:26126>],
 	[<gregtech:meta_item_1:12126>, <enderio:block_alloy>, <gregtech:meta_item_1:12126>],
 	[<gregtech:meta_item_2:26126>, <gregtech:meta_item_1:12126>, <gregtech:meta_item_2:26126>]]);
 
-//reinforced upgrade
+//Reinforced Upgrade Kit
 recipes.remove(<thermalfoundation:upgrade:1>);
 recipes.addShaped(<thermalfoundation:upgrade:1>, [
 	[<gregtech:meta_item_2:26112>, <gregtech:meta_item_1:12112>, <gregtech:meta_item_2:26112>],
-	[<gregtech:meta_item_1:12112>, <gregtech:compressed_0>, <gregtech:meta_item_1:12112>],
+	[<gregtech:meta_item_1:12112>, <gregtech:meta_block_compressed_0:1>, <gregtech:meta_item_1:12112>],
 	[<gregtech:meta_item_2:26112>, <gregtech:meta_item_1:12112>, <gregtech:meta_item_2:26112>]]);
 
-//sig upgrade
+//Signalum Upgrade Kit
 recipes.remove(<thermalfoundation:upgrade:2>);
 recipes.addShaped(<thermalfoundation:upgrade:2>, [
 	[<moreplates:restonia_gear>, <thermalfoundation:material:357>, <moreplates:restonia_gear>],
 	[<thermalfoundation:material:357>, <thermalfoundation:storage_alloy:6>, <thermalfoundation:material:357>],
 	[<moreplates:restonia_gear>, <thermalfoundation:material:357>, <moreplates:restonia_gear>]]);
 
-//end upgrade
+//Resonant Upgrade Kit
 recipes.remove(<thermalfoundation:upgrade:3>);
 recipes.addShaped(<thermalfoundation:upgrade:3>, [
 	[<moreplates:emeradic_gear>, <thermalfoundation:material:359>, <moreplates:emeradic_gear>],
@@ -165,6 +154,12 @@ recipes.addShaped(<thermalfoundation:material:513>, [
 	[<minecraft:redstone>, <gregtech:meta_item_1:14112>, <minecraft:redstone>],
 	[<gregtech:meta_item_1:14112>, <minecraft:redstone>, null]]);
 
+//Electrum Conductance Coil
+recipes.addShaped(<thermalfoundation:material:515>, [
+	[<gregtech:meta_item_1:14026>, <minecraft:redstone>, null],
+	[<minecraft:redstone>, <gregtech:meta_item_1:14026>, <minecraft:redstone>],
+	[null, <minecraft:redstone>, <gregtech:meta_item_1:14026>]]);
+	
 //Auxiliary Transmission Coil
 recipes.remove(<thermalexpansion:augment:512>);
 recipes.addShaped(<thermalexpansion:augment:512>, [
@@ -200,7 +195,7 @@ recipes.addShaped(<thermalexpansion:augment:320>, [
 	[<thermalfoundation:material:328>, <thermalfoundation:fertilizer:1>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-//Monoculture
+//Monoculture Cycle
 recipes.remove(<thermalexpansion:augment:324>);
 recipes.addShaped(<thermalexpansion:augment:324>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
@@ -214,106 +209,91 @@ recipes.addShaped(<thermalexpansion:augment:323>, [
 	[<thermalfoundation:material:328>, <ore:treeSapling>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-//Gear Making Thing
+//Gearworking Die
 recipes.remove(<thermalexpansion:augment:337>);
 recipes.addShaped(<thermalexpansion:augment:337>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
 	[<thermalfoundation:material:328>, <gregtech:meta_item_2:26111>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-
-//Pyroconductive Loop
-recipes.remove(<thermalexpansion:augment:352>);
-recipes.addShaped(<thermalexpansion:augment:352>, [
-	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
-	[<thermalfoundation:material:328>, <minecraft:lava_bucket>, <thermalfoundation:material:328>],
-	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
-
-//charger thing
+//Flux Linkage Concentrator
 recipes.remove(<thermalexpansion:augment:400>);
 recipes.addShaped(<thermalexpansion:augment:400>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
 	[<thermalfoundation:material:328>, <appliedenergistics2:charger>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-//repair thing
+//Flux Reconstruction
 recipes.remove(<thermalexpansion:augment:401>);
 recipes.addShaped(<thermalexpansion:augment:401>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
 	[<thermalfoundation:material:328>, <actuallyadditions:item_solidified_experience>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-//hopper thing
+//Transmission Coil Ducting
 recipes.remove(<thermalexpansion:augment:514>);
 recipes.addShaped(<thermalexpansion:augment:514>, [
 	[<minecraft:iron_ingot>, <gregtech:meta_item_1:12033>, <minecraft:iron_ingot>],
 	[<gregtech:meta_item_1:12033>, <minecraft:hopper>, <gregtech:meta_item_1:12033>],
 	[<minecraft:iron_ingot>, <gregtech:meta_item_1:12033>, <minecraft:iron_ingot>]]);
 
-	//reagent thing
-recipes.remove(<thermalexpansion:augment:448>);
-recipes.addShaped(<thermalexpansion:augment:448>, [
-	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
-	[<thermalfoundation:material:328>, <minecraft:dye:4>, <thermalfoundation:material:328>],
-	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
-
-	//i give up
+//Isentropic Reservoir
 recipes.remove(<thermalexpansion:augment:656>);
 recipes.addShaped(<thermalexpansion:augment:656>, [
 	[<enderio:item_alloy_ingot:6>, <gregtech:meta_item_1:12704>, <enderio:item_alloy_ingot:6>],
 	[<gregtech:meta_item_1:12704>, <thermalfoundation:material:1024>, <gregtech:meta_item_1:12704>],
 	[<enderio:item_alloy_ingot:6>, <gregtech:meta_item_1:12704>, <enderio:item_alloy_ingot:6>]]);
 
-	//i give up
+//Pyroclastic Injection
 recipes.remove(<thermalexpansion:augment:496>);
 recipes.addShaped(<thermalexpansion:augment:496>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
 	[<thermalfoundation:material:328>, <minecraft:water_bucket>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-	//i give up
+//Elemental Catalyzer
 recipes.remove(<thermalexpansion:augment:688>);
 recipes.addShaped(<thermalexpansion:augment:688>, [
 	[<redstonearsenal:material:128>, <redstonearsenal:material:128>, <redstonearsenal:material:128>],
 	[<redstonearsenal:material:128>, <thermalfoundation:material:1028>, <redstonearsenal:material:128>],
 	[<redstonearsenal:material:128>, <redstonearsenal:material:128>, <redstonearsenal:material:128>]]);
 
-	//i give up
+//Parabolic Flux Coupling
 recipes.remove(<thermalexpansion:augment:402>);
 recipes.addShaped(<thermalexpansion:augment:402>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
 	[<thermalfoundation:material:328>, <thermalexpansion:capacitor>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-	//fuel catalyzer
+//Fuel Catalyzer
 recipes.remove(<thermalexpansion:augment:513>);
 recipes.addShaped(<thermalexpansion:augment:513>, [
 	[<ore:ingotWroughtIron>, <ore:plateWroughtIron>, <ore:ingotWroughtIron>],
 	[<ore:plateWroughtIron>, <thermalfoundation:material:515>, <ore:plateWroughtIron>],
 	[<ore:ingotWroughtIron>, <ore:plateWroughtIron>, <ore:ingotWroughtIron>]]);
 
-	//excitation field limiter
+//Excitation Field Limiter
 recipes.remove(<thermalexpansion:augment:515>);
 recipes.addShaped(<thermalexpansion:augment:515>, [
 	[<minecraft:iron_ingot>, <gregtech:meta_item_1:12033>, <minecraft:iron_ingot>],
 	[<gregtech:meta_item_1:12033>, <contenttweaker:excitationcoil>, <gregtech:meta_item_1:12033>],
 	[<minecraft:iron_ingot>, <gregtech:meta_item_1:12033>, <minecraft:iron_ingot>]]);
 
-	//i give up
+//Lapidary Calibration
 recipes.remove(<thermalexpansion:augment:720>);
 recipes.addShaped(<thermalexpansion:augment:720>, [
 	[<ore:plateDiamond>, <ore:plateDiamond>, <ore:plateDiamond>],
 	[<ore:plateDiamond>, <minecraft:emerald>, <ore:plateDiamond>],
 	[<ore:plateDiamond>, <ore:plateDiamond>, <ore:plateDiamond>]]);
 
-	//i give up
+//Clastic Deposition
 recipes.remove(<thermalexpansion:augment:497>);
 recipes.addShaped(<thermalexpansion:augment:497>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
 	[<thermalfoundation:material:328>, <minecraft:cobblestone>, <thermalfoundation:material:328>],
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>]]);
 
-	//excitation coil
+//Excitation Coil
 recipes.addShaped(<contenttweaker:excitationcoil>, [
 	[null, <gregtech:meta_item_1:12237>, null],
 	[<gregtech:meta_item_1:12237>, <thermalfoundation:material:515>, <gregtech:meta_item_1:12237>],
@@ -321,25 +301,7 @@ recipes.addShaped(<contenttweaker:excitationcoil>, [
 
 <contenttweaker:excitationcoil>.addTooltip(format.darkGray(format.italic("Crafting component only.")));
 
-recipes.addShaped(<thermalfoundation:material:515>, [
-	[<gregtech:meta_item_1:14026>, <minecraft:redstone>, null],
-	[<minecraft:redstone>, <gregtech:meta_item_1:14026>, <minecraft:redstone>],
-	[null, <minecraft:redstone>, <gregtech:meta_item_1:14026>]]);
-
-
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:258>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:273>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:288>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:304>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:416>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:368>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:369>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:432>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:433>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:673>);
-mods.jei.JEI.removeAndHide(<thermalexpansion:augment:674>);
-
-//coin thing
+//Numismatic Press
 recipes.remove(<thermalexpansion:augment:336>);
 recipes.addShaped(<thermalexpansion:augment:336>, [
 	[<thermalfoundation:material:136>, <thermalfoundation:material:328>, <thermalfoundation:material:136>],
@@ -385,7 +347,6 @@ recipes.addShaped(<thermalexpansion:frame>, [
 <thermalexpansion:frame:64>.displayName = "Thermal Machine Casing";
 
 recipes.remove(<thermalexpansion:frame:64>);
-recipes.remove(<nuclearcraft:compound:2>);
 recipes.addShaped(<thermalexpansion:frame:64>, [
 	[<thermalfoundation:material:136>,<thermalfoundation:material:136>,<thermalfoundation:material:136>],
 	[<thermalfoundation:material:136>, null, <thermalfoundation:material:136>],
@@ -499,3 +460,43 @@ mods.thermalexpansion.Insolator.addRecipe(<appliedenergistics2:material:12>, <ap
 mods.jei.JEI.addDescription(<appliedenergistics2:material:10>, "Made in the Crystal Growth Chamber or in a Phytogenic Insolator. If made in the Phytogenic Insolator, make sure to unlock the Fertilizer slot. Augments do not work for this craft.");
 mods.jei.JEI.addDescription(<appliedenergistics2:material:11>, "Made in the Crystal Growth Chamber or in a Phytogenic Insolator. If made in the Phytogenic Insolator, make sure to unlock the Fertilizer slot. Augments do not work for this craft.");
 mods.jei.JEI.addDescription(<appliedenergistics2:material:12>, "Made in the Crystal Growth Chamber or in a Phytogenic Insolator. If made in the Phytogenic Insolator, make sure to unlock the Fertilizer slot. Augments do not work for this craft.");
+
+val liquids as int[][ILiquidStack] = {
+    
+    //Fluid : duration, power
+    <liquid:water> * 73 : [1568, 30],
+    <liquid:distilled_water> * 55 : [1019, 30],
+    <liquid:lubricant> * 18 : [392, 30]
+
+};
+
+val blocks = [
+
+    //Enderium
+    [<thermalfoundation:storage_alloy:7>, <thermalfoundation:material:359> * 9],
+    //Lumium
+    [<thermalfoundation:storage_alloy:6>, <thermalfoundation:material:358> * 9],
+    //Signalum
+    [<thermalfoundation:storage_alloy:5>, <thermalfoundation:material:357> * 9],
+    //Mana Infused
+    [<thermalfoundation:storage:8>, <thermalfoundation:material:328> * 9]
+
+] as IItemStack[][];
+
+for blockItem in blocks {
+
+    for liquid, values in liquids {
+   
+        saw.recipeBuilder()
+            .inputs(blockItem[0])
+            .fluidInputs(liquid)
+            .outputs(blockItem[1])
+            .duration(values[0]).EUt(values[1]).buildAndRegister();
+
+    }
+}
+
+//Add Rubber Trees to Phytogenic Insolator. Why would you use this?
+mods.thermalexpansion.Insolator.addRecipeSaplingInfuser(<gregtech:log> * 6, <gregtech:sapling>, <thermalfoundation:fertilizer:0>, 9600, <gregtech:sapling>, 100);
+mods.thermalexpansion.Insolator.addRecipeSaplingInfuser(<gregtech:log> * 12, <gregtech:sapling>, <thermalfoundation:fertilizer:1>, 14400, <gregtech:sapling>, 125);
+mods.thermalexpansion.Insolator.addRecipeSaplingInfuser(<gregtech:log> * 18, <gregtech:sapling>, <thermalfoundation:fertilizer:2>, 19200, <gregtech:sapling>, 150);
