@@ -334,6 +334,11 @@ recipes.remove(<actuallyadditions:block_fluid_collector>);
 recipes.remove(<actuallyadditions:block_placer>);
 recipes.remove(<actuallyadditions:block_fluid_placer>);
 
+recipes.addShaped(<actuallyadditions:block_breaker>, [
+[<gregtech:cable:700>, <gregtech:cable:700>, <thermalfoundation:material:513>],
+[<ore:chestWood>, <gregtech:meta_item_1:32640>, <thermalfoundation:material:513>],
+[<gregtech:cable:700>, <gregtech:cable:700>, <thermalfoundation:material:513>]]);
+
 recipes.addShaped(<actuallyadditions:block_breaker>, [[<actuallyadditions:item_misc:7>, <gregtech:meta_item_1:32640>]]);
 recipes.addShaped(<actuallyadditions:block_placer>, [[<gregtech:meta_item_1:32640>,<actuallyadditions:item_misc:7>]]);
 recipes.addShaped(<actuallyadditions:block_fluid_placer>, [[<gregtech:meta_item_1:32610>,<actuallyadditions:item_misc:7>]]);
