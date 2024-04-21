@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>EWU-MC Installation Guide</title>
+    <style>
+    body {
+        padding: 50px;
+        background-color: #202020;
+        color: #d2d4d4;
+        font-family: sans-serif;
+    }
+
+    a:link {
+        color: #87cefa;
+    }
+
+    a:visited {
+        color: #3cb371;
+    }
+    ul, li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    table, th, td {
+      border: 1px solid #545454;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <p>
+        This page is here to instruct you on how to install the EWU Minecraft CS Modpack. This site is still very much a work in progress, so please be paitent. If you wish to contribute, you can find the source code at the 'site' branch at <a href="https://github.com/gknutson1/ewu-mc/">github.com/gknutson1/ewu-mc</a>. You can also find the source code for the modpack there if you want to roll your own version of the pack or contribute to improving the pack.
+    </p>
+    <p>
+        The server has a Discord! The discord is where we announce updates, coordinate events, and talk with other players. Join at <a href="https://discord.gg/TE2bvDM5/">discord.gg/TE2bvDM5</a>. If you have any problems or questions about the site, the modpack or the server, contact me on Discord by pinging me (@Gunnar Knutson) in the #server-help channel on the Discord.
+    </p>
+    <p>
+        This modpack is formatted as a CurseForge pack. This guide shows how to use Prism Launcher to install and manage the modpack, but any Minecraft launcher that supports CurseForge modpacks, such as the CurseForge launcher or MultiMC, should work. You can download the latest version of the pack from the <a href="">CurseForge page<a> or <a href="https://github.com/gknutson1/ewu-mc/">GitHub repo</a>.
+    </p>
+    <p>
+        This guide assumes you have zero experience with modded Minecraft and aims to be as detailed as possible. If you have some experience with modded Minecraft, you likely only neeed to skim this guide or not need to use it at all.
+    </p>
+    <h3>Table Of Contents</h3>
+    <p><a href="#requirements">System Requirements</a></p>
+    <p><a href="#java">Installing Java</a></p>
+    <p><a href="#launcher">Installing Prism Launcher</a></p>
+    <p><a href="#modpack">Installing the Modpack</a></p>
+    <h3 id="requirements">System Requirements</h3>
+    <p>
+        To join the Server, you must have a computer capable of running Minecraft Java Edition 1.12.2. In general, you will need a computer with a multicore x86-64 processor, running either Windows, Linux, or MacOS, although other OSes may work. It is reccommended to give the modpack at least 4 GB of RAM, so ideally you should have at least 8 GB of RAM. However, the modpack can run on computers with as little as 6 GB of RAM. This tutorial is primarily for Windows users, so users of other OSes may need to modify these instructions as they see fit.
+    </p>
+    <h3 id="launcher">Installing Java</h3>
+    <p>
+        This modpack requires Java 8 to run. If you do not have Java 8 installed, you can download the most recent Java 8 update from <a href="https://www.java.com/en/download/">java.com/download</a>.
+    <h3 id="launcher">Installing Prism Launcher</h3>
+    <p><ul>
+        <li>Go to <a href="https://prismlauncher.org/download?from=button">prismlauncher.org/download</a> and download the version for your operating system.</li>
+        <li>Run the installer and begin following the instructions until you encounter a page asking you to set a java version.</li>
+        <li>Select the first line with a Version number of 1.8.0_XXX (where XXX is any number).</li>
+        <li>Set the Maximum Memory Allocation box to the appropriate ammount based on the ammount of RAM your computer has: 
+            <ul>
+                <li>You can see how much RAM you have by opening <b>Settings</b> and selecting <b>System > About</b>. Move to the <b>Device Specifications</b> section and look for the <b>Installed RAM</b> line - You should see an output similar to  <b>8.00 GB (7.59 usable)</b>. IGNORE the usable part - use the first number only.</li> 
+                <li>Multiply that first number by 1024 to get the number of megabytes of RAM your computer has.</li>
+                <li>Use the below table to determine the approprate value to put in the Maximum Memory Allocation box:</li>
+                <table>
+                    <tr>
+                        <th>Installed RAM</th>
+                        <th>Maximum Memory Allocation</th>
+                    </tr>
+                    <tr>
+                        <td>Less than 6144 MiB</td>
+                        <td>NOT SUPPORTED</td>
+                    </tr>
+                    <tr>
+                        <td>6144 to 10240 MiB</td>
+                        <td>( Installed RAM / 2 ) + 4096 MiB</td>
+                    </tr>
+                    <tr>
+                        <td>More than 10240 MiB</td>
+                        <td>8192 MiB</td>
+                    </tr>
+                </table>
+            </ul>
+        </li>
+        <li>Complete any additional installation steps.
+        <li>Once the installation has been completed, you will find yourself on the main PrismLauncher window.</li>
+        <li>Select the <b>Accounts</b> drop down in the top right section of the screen, and select the <b>Manage Accounts...</b> button</li>
+        <li>A new window will appear. Select the <b>Add Microsoft</b> button in the top right section of the window, and complete any prompts given to you by the program.</li>
+        <li>Close the accounts window using the button in the lower right corner of the window.</li>
+    </ul></p>
+    </p>
+    <h3 id="modpack">Installing the Modpack</h3>
+    <p><ul>
+        <li>So to <a href="https://www.curseforge.com/minecraft/modpacks/ewu-mc">curseforge.com/minecraft/modpacks/ewu-mc</a> and select the <b>Install</b> button.</li>
+        <li>If a prompt appears asking for permission to open the link with Prism Launcher, allow it.</li>
+        <li>A window should appear in PrismLauncher, allowing you to name the instance. Select the <b>OK</b> button in the bottom right.</li>
+        <li>Prism Launcher will now install all mods The modpack should now be installed.</li>
+    </ul></p>
+</body>
+</html>

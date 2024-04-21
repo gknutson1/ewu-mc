@@ -1,0 +1,1 @@
+EWU-MC is a modified version of Nomifactory, developed for use as a server for the EWU ACM club. For more info on EWU-MC, visit https://www.curseforge.com/minecraft/modpacks/ewu-mc. For more info on Nomifactory, visit https://www.curseforge.com/minecraft/modpacks/nomifactory.
