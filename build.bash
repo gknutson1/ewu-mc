@@ -4,7 +4,7 @@
 
 set -ex
 
-ver="1.2.2"
+ver="1.2.3"
 offset=-183
 orig_offset=-180
 
