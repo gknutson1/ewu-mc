@@ -10,7 +10,7 @@ orig_offset=-180
 
 chmod +x build.py
 
-mkdir out
+[[ ! -e "out" ]] && mkdir out
 
 page="$(curl "https://nightly.link/Nomifactory/Nomifactory/workflows/nightly/dev")"
 client="$(echo "$page" | grep -oP 'https://nightly.link/Nomifactory/Nomifactory/workflows/nightly/dev/nomifactory-[^/]+-client.zip' | head -1)"
